@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body.dark-mode {
+  background-color: #030712;
+  color: #fff;
+}
+
+body.light-mode {
+  background-color: #eaf1ff;
+  color: #0f172a;
+}
+
+/* Smooth transition */
+body {
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Scrollbar base */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #434e67;
+}
+
+::-webkit-scrollbar-track {
+  background: #acacacc0;
+  border-radius: 100px;
+}
+
+/* Scrollbar thumb with neon animation */
+::-webkit-scrollbar-thumb {
+  /* border: 1px solid black; */
+  border-radius: 100px;
+  background: rgba(1, 56, 255, 1);
+  background-size: 200% 200%;
+}
+
+.active-link {
+  color: rgb(16, 127, 255);
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: rgb(16, 127, 255);
+}
+
+/* Fullscreen loader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  color: white;
+}
+
+/* Simple spinner */
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #00bfff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+
+.nav {
+  border-bottom: 1px solid red;
+  animation: solidBorderCycle 6s linear infinite;
+  box-shadow: none;
+}
+@keyframes solidBorderCycle {
+  0% {
+    border-color: #00f;
+  }
+
+  16% {
+    border-color: #0ff;
+  }
+
+  33% {
+    border-color: #0f0;
+  }
+
+  50% {
+    border-color: #ff0;
+  }
+
+  66% {
+    border-color: #f90;
+  }
+
+  83% {
+    border-color: #f0f;
+  }
+
+  100% {
+    border-color: #f00;
+  }
+}
+
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.animated-neon-border {
+  border-radius: 9999px;
+  box-shadow: 0 0 20px #00f;
+  animation: solidNeonCycle 6s linear infinite, rotateYZoom 2.5s ease-out forwards;
+}
+
+@keyframes rotateYZoom {
+  0% {
+    transform: rotateY(0deg) scale(0);
+  }
+  100% {
+    transform: rotateY(720deg) scale(1);
+  }
+}
+
+@keyframes solidNeonCycle {
+  0%   { border-color: #00f; box-shadow: 0 0 35px 2px #00f; }
+  16%  { border-color: #0ff; box-shadow: 0 0 35px 2px #0ff; }
+  33%  { border-color: #0f0; box-shadow: 0 0 35px 2px #0f0; }
+  50%  { border-color: #ff0; box-shadow: 0 0 35px 2px #ff0; }
+  66%  { border-color: #f90; box-shadow: 0 0 35px 2px #f90; }
+  83%  { border-color: #f0f; box-shadow: 0 0 35px 2px #f0f; }
+  100% { border-color: #f00; box-shadow: 0 0 35px 2px #f00; }
+}
+
+
+/* for Projects */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 150%;
+  background: linear-gradient(
+    rgb(255, 0, 0),
+    rgb(251, 255, 0),
+    rgb(94, 255, 0),
+    rgb(0, 242, 255),
+    rgb(0, 21, 255),
+    rgb(238, 0, 255)
+  );
+  z-index: 0;
+}
+
+
+.hover-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 24px rgb(255, 251, 0, 0.3);
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+  background-color: #1f2937;
+  /* solid dark gray */
+}
+
+
+#chatbox::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chatbox::-webkit-scrollbar-thumb {
+  background-color: #a0aec0; /* Tailwind's gray-400 */
+  border-radius: 4px;
+}
+
+#chatbox {
+  scrollbar-width: thin;
+  scrollbar-color: #a0aec0 transparent;
+}
+
+

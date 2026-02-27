@@ -1,0 +1,23 @@
+# 🔐 Sensitive environment file
+server/.env
+
+# 📦 Node.js dependencies
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# 🛠️ Build outputs (optional if using Vite or React)
+dist/
+build/
+
+# 🧹 System files
+.DS_Store
+Thumbs.db
+
+# 🧪 Logs
+npm-debug.log*
+*.log
+
+# 🧰 Editor-specific folders
+.vscode/
+.idea/

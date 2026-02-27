@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | ANKUR SINGH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Permanent+Marker&family=Protest+Guerrilla&family=Roboto+Slab:wght@700&family=Rubik+Mono+One&family=Rubik:ital,wght@0,503;1,503&family=Unlock&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class' // important: enables 'dark:' variants
+        };
+    </script>
+</head>
+
+<body class="bg-gray-200 dark:bg-gray-950 text-black dark:text-white  overflow-x-hidden">
+
+    <!-- <div id="preloader">
+        <div class="spinner"></div>
+        <h1>Loading portfolio...</h1>
+    </div> -->
+
+    <div id="content">
+        <!-- Navbar -->
+        <nav class="bg-blue-300 dark:bg-gray-900 nav shadow-md fixed top-0 w-full z-50">
+            <div class="max-w-6xl mx-auto  px-5 py-3 flex justify-between items-center">
+                <h1 class="text-xl font-bold px-5 md:px-10">AS</h1>
+                <!-- Hamburger Icon -->
+                <button id="sidebar-toggle" class="md:hidden focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <div class="hidden font-bold md:flex space-x-8 px-5 md:px-10">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experiences" class="nav-link">Experiences</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <!-- Desktop toggle -->
+                    <div class="flex items-center gap-2">
+                        <span id="mode-icon-desktop">🌙</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="theme-toggle-desktop" class="sr-only peer" />
+                            <div
+                                class="w-7 h-4 bg-gray-400 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[0px] after:left-[0px] after:bg-white after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-yellow-400">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="sidebar"
+            class="bg-blue-300 dark:bg-gray-900 fixed top-0 left-0 h-full w-64 shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+            <div class="p-4 flex justify-between items-center border-b">
+                <h2 class="text-xl font-semibold">Menu</h2>
+                <button id="sidebar-close" class="">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col p-4 space-y-4">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experiences" class="nav-link">Experiences</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <!-- Mobile toggle -->
+                <div class="flex items-center gap-1 ml-4">
+                    <span id="mode-icon-mobile" class="text-white text-lg">🌙</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="theme-toggle-mobile" class="sr-only peer" />
+                        <div
+                            class="w-11 h-6 bg-gray-600 rounded-full peer peer-checked:after:translate-x-full after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-400">
+                        </div>
+                    </label>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Home -->
+        <section id="home"
+            class="bg-[#f9f9f9] dark:bg-gray-950 pb-5 mt-10 min-h-screen flex items-center justify-center px-20">
+            <div class="max-w-7xl w-full flex flex-col-reverse md:flex-row items-center justify-center gap-10">
+
+                <div class="w-full md:w-2/3 text-center md:text-left md:px-3">
+                    <h1 class="text-4xl sm:text-6xl font-bold mb-4 ">
+                        Hi, I'm <span id="typingName" class="text-blue-500 "></span>
+                    </h1>
+                    <h2 class="text-xl sm:text-[1.4rem] mb-4">
+                        <i>Web Developer | UI/UX Enthusiast | React Developer</i>
+                    </h2>
+                    <p class="mb-6 sm:text-[1.1rem]">
+                        I craft fast, responsive, and user-friendly web experiences. Passionate about clean UI and
+                        interactive design.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects"
+                            class="bg-blue-600 font-semibold px-6 py-3 rounded-full text-white hover:bg-blue-900 transition">
+                            View Projects
+                        </a>
+                        <a href="#contact"
+                            class="border-2 border-blue-600 font-semibold px-6 py-3 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:w-1/3 mt-10 flex justify-center ">
+                    <div class="relative perspective-1000">
+                        <div
+                            class="animated-neon-border w-80 h-80 md:w-80 md:h-80 bg-white rounded-full overflow-hidden border-1 shadow-xl">
+                            <img src="./images/profile.jpeg" alt="Harsh Gupta" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="bg-[#f9f9f9] dark:bg-gray-950 py-16 px-7">
+            <div class="max-w-6xl mx-auto">
+
+                <h1 class=" text-5xl font-bold text-center mb-16 mt-5 text-blue-500" data-aos="fade-up">
+                    About Me
+                </h1>
+
+                <div class="flex flex-col md:flex-row items-center gap-20 mx-0" data-aos="fade-up">
+
+                    <div class="w-full md:w-1/4 md:ml-10">
+                        <!-- Avatar Image -->
+                        <img src="./images/profile.jpeg" style="filter: brightness(0.9);" alt="About Me"
+                            class="rounded-lg shadow-lg w-full h-auto border-0  mb-4" />
+                    </div>
+
+                    <div class="w-full md:w-3/4">
+                        <p class="text-0.5xl leading-relaxed mb-5">
+                            I’m a full-stack developer from IIIT Bhopal, passionate about building high-performance,
+                            responsive, and visually appealing web applications. I love turning complex problems into
+                            clean, efficient, and user-friendly solutions.
+                            <br><br>
+                            With expertise in both frontend and backend, I work across the MERN stack and enjoy creating
+                            seamless, interactive experiences using modern libraries and frameworks. I thrive on
+                            learning new technologies and bringing ideas to life with code.
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                Full-stack development
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                MERN stack expertise
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                Responsive & modern UI
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                Smooth, interactive apps
+                            </li>
+                        </ul>
+
+                        <br>
+
+                        <!-- Download Resume Button -->
+                        <a href="https://drive.google.com/file/d/1VP_K8Jibus8Hc1SyTEKspzBP-Qo2pz8B/view" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-blue-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-blue-900 transition duration-300">
+                            📝 Resume
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiences -->
+        <section id="experiences" class="bg-[#f9f9f9] dark:bg-gray-950 py-10 px-7">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-5xl font-bold text-center my-12 text-blue-500" data-aos="fade-up">
+                    My Journey
+                </h2>
+                <p class="text-center text-gray-600 dark:text-gray-300 mt-[-30px] mb-16 max-w-2xl mx-auto"
+                    data-aos="fade-up">
+                    My professional path and educational background that shaped my expertise.
+                </p>
+                <div class="flex flex-wrap gap-20 justify-center ">
+
+                    <!-- Card 1 -->
+                    <div class="relative mt-10 w-80 h-[250px] flex justify-center items-center group"
+                        data-aos="fade-up">
+                        <!-- Gradient skewed background -->
+                        <div class="absolute top-0 left-[50px] w-1/2 h-full rounded-xl
+                bg-gradient-to-br from-red-100 via-red-500 to-red-900 skew-x-12 blur-2xl
+                transition-all duration-500 group-hover:skew-x-0 group-hover:left-5 group-hover:w-[calc(100%-90px)]">
+                        </div>
+
+                        <!-- Glow overlay -->
+                        <div class="absolute top-0 left-0 w-full h-full rounded-xl bg-white/10 dark:bg-black/20 backdrop-blur-lg
+                opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+                        <!-- Card content -->
+                        <div class="relative border-l-4 border-red-600 flex flex-col justify-center h-[200px] z-10 bg-white/80 dark:bg-gray-800/70 backdrop-blur-md p-5 rounded-xl shadow-lg
+                text-gray-900 dark:text-white">
+                            <div class="flex flex-row justify-between items-center">
+                                <h2 class="text-2xl font-bold mb-2">💡Smart India Hackathon</h2>
+                                <p class="text-2sm text-red-500 ">2023
+                                </p>
+                            </div>
+                            <p class="text-sm leading-5 mb-4">My team got selected among the <b>top 5 finalists</b>
+                                nationwide in the Smart India Hackathon 2023 for developing a solution to analyze
+                                school dropouts.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="relative mt-10 w-80 h-[250px] flex justify-center items-center group"
+                        data-aos="fade-up">
+                        <!-- Gradient skewed background -->
+                        <div class="absolute top-0 left-[50px] w-1/2 h-full rounded-xl
+              bg-gradient-to-br from-yellow-100 via-yellow-500 to-yellow-900 skew-x-12 blur-2xl
+              transition-all duration-500 group-hover:skew-x-0 group-hover:left-5 group-hover:w-[calc(100%-90px)]">
+                        </div>
+
+                        <!-- Glow overlay -->
+                        <div class="absolute top-0 left-0 w-full h-full rounded-xl bg-white/10 dark:bg-black/20 backdrop-blur-lg
+              opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        </div>
+
+                        <!-- Card content -->
+                         
+                        <div class="relative border-l-4 border-yellow-600 flex flex-col justify-center h-[200px] z-10 bg-white/80 dark:bg-gray-800/70 backdrop-blur-md p-5 rounded-xl shadow-lg
+                text-gray-900 dark:text-white">
+                            <div class="flex flex-row justify-between items-center">
+                                <h2 class="text-2xl font-bold mb-2">🤖Tech Quiz</h2>
+                                <p class="text-2sm text-yellow-500 ">2024
+                                </p>
+                            </div>
+                            <p class="text-sm leading-5 mb-4">Secured 3rd position in a Tech Quiz competition organized
+                                by the IEEE Club which include various questions related with coding, AI, Machine
+                                Learning etc.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Project -->
+        <section id="projects" class="bg-[#f9f9f9] dark:bg-gray-950 py-5 px-7 relative overflow-hidden">
+            <h2 class="text-5xl py-10 font-bold text-center mb-5 text-blue-500" data-aos="fade-up">
+                Projects
+            </h2>
+
+            <div class="relative max-w-6xl mx-auto flex flex-col items-center gap-20 timeline">
+
+                <!-- Project 1: Gaming Arcade -->
+                <div class="relative w-full md:w-3/4" data-aos="fade-up">
+                    <div
+                        class="absolute top-[-5px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-red-500 rounded-full border-4 border-white shadow-[0_0_12px_4px_rgba(225,0,0,0.7)] z-10">
+                    </div>
+                    <div
+                        class="hover-card bg-red-50 dark:bg-gray-900 border-l-4 border-red-500 p-6 mt-6 ml-auto rounded-xl max-w-[400px]">
+                        <img src="./images/thinkboard.png" class="rounded mb-3 w-full h-32 object-cover" />
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-red-500 font-semibold text-lg">ThinkBoard</h3>
+                            <div class="flex gap-2">
+                                <button class="bg-red-500/20 dark:bg-gray-800 px-3 py-0 rounded-full">
+                                    <a href="https://thinkboard-three.vercel.app/"
+                                        class="text-sm text-red-500 hover:text-black dark:hover:text-white">🌐 Live
+                                        Demo</a>
+                                </button>
+                                <button class="bg-red-500/30 dark:bg-gray-950 px-3 py-0 rounded-full">
+                                    <a href="https://github.com/tech-ankur/thinkboard"
+                                        class="text-sm text-red-500 hover:text-black dark:hover:text-white hover:font-semibold">
+                                        <i class="fab fa-github"></i>&nbsp; Code
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-sm mb-2">thinkboard is a full-stack MERN note-taking and idea management web application built using MongoDB, Express.js, React, and Node.js. It lets users create, read, update, and delete (CRUD) boards or notes, helping them capture and organize thoughts, tasks, or ideas in one place with a responsive and interactive user interface.</i>
+                        </p>
+                        <p class="text-sm mb-2">Optimized with modular JavaScript and fast loading (under 2.5s).</p>
+                        <div class="flex items-center gap-3 mt-5">
+                            <div class="flex items-center gap-2"><i class="fab fa-html5 text-orange-500"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">HTML</span></div>
+                            <div class="flex items-center gap-2"><i class="fab fa-css3-alt text-sky-400"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">TailwindCSS</span></div>
+                            <div class="flex items-center gap-2"><i class="fab fa-js-square text-yellow-400"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">JavaScript</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Todo App -->
+                <div class="relative w-full md:w-3/4" data-aos="fade-up">
+                    <div
+                        class="absolute top-[-5px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-[0_0_12px_4px_rgba(34,197,94,0.7)] z-10">
+                    </div>
+                    <div
+                        class="hover-card bg-green-50 dark:bg-gray-900 border-l-4 border-green-500 p-6 mt-6 mr-auto rounded-xl max-w-[400px]">
+                        <img src="./images/greencart.png" class="rounded mb-3 w-full h-32 object-cover" />
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-green-500 font-semibold text-lg">Green Cart</h3>
+                            <div class="flex gap-2">
+                                <button class="bg-green-500/20 dark:bg-gray-800 px-3 py-0 rounded-full">
+                                    <a href="https://green-cart-eight-azure.vercel.app/"
+                                        class="text-sm text-green-600 hover:text-black dark:hover:text-white">🌐 Live
+                                        Demo</a>
+                                </button>
+                                <button class="bg-green-500/30 dark:bg-gray-950 px-3 py-0 rounded-full">
+                                    <a href="https://github.com/tech-ankur/Green_cart"
+                                        class="text-sm text-green-600 hover:text-black dark:hover:text-white hover:font-semibold">
+                                        <i class="fab fa-github"></i>&nbsp; Code
+                                    </a>
+                                </button>
+                            </div>
+                        </div>Green_cart is a full-stack e-commerce web application designed to sell eco-friendly and sustainable products. The project includes both frontend and backend components, enabling users to browse products, add items to a shopping cart, and complete purchases through a complete shopping workflow.</p>
+                        <div class="flex items-center gap-3 mt-5">
+                            <div class="flex items-center gap-2"><i class="fab fa-html5 text-orange-500"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">HTML</span></div>
+                            <div class="flex items-center gap-2"><i class="fab fa-css3-alt text-sky-400"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">CSS</span></div>
+                            <div class="flex items-center gap-2"><i class="fab fa-js-square text-yellow-400"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">JavaScript</span></div>
+                            <div class="flex items-center gap-2"><i class="fab fa-react text-cyan-400"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">React</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Portfolio -->
+                <div class="relative w-full md:w-3/4" data-aos="fade-up">
+                    <div
+                        class="absolute top-[-5px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-orange-400 rounded-full border-4 border-white shadow-[0_0_12px_4px_rgba(225,165,0,0.7)] z-10">
+                    </div>
+                    <div
+                        class="hover-card bg-orange-50 dark:bg-gray-900 border-l-4 border-orange-500 p-6 mt-6 ml-auto rounded-xl max-w-[400px]">
+                        <img src="./images/portfolio.png" class="rounded mb-3 w-full h-32 object-cover" />
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-orange-500 font-semibold text-lg">Portfolio</h3>
+                            <div class="flex gap-2">
+                                <button class="bg-orange-400/20 dark:bg-gray-800 px-3 py-0 rounded-full">
+                                    <a href="https://portfolio-github-io-two-xi.vercel.app/"
+                                        class="text-sm text-orange-500 hover:text-black dark:hover:text-white">🌐 Live
+                                        Demo</a>
+                                </button>
+                                <button class="bg-orange-400/30 dark:bg-gray-950 px-3 py-0 rounded-full">
+                                    <a href="https://github.com/harshgupta-16/Portfolio.github.io"
+                                        class="text-sm text-orange-500 hover:text-black dark:hover:text-white hover:font-semibold">
+                                        <i class="fab fa-github"></i>&nbsp; Code
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-sm mb-2">Personal portfolio with responsive layout, animations, and project
+                            showcase.
+                        </p>
+                        <div class="flex items-center gap-3 mt-5">
+                            <div class="flex items-center gap-2"><i class="fab fa-html5 text-orange-500"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">HTML</span></div>
+                            <div class="flex items-center gap-2"><i class="fab fa-css3-alt text-sky-400"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">TailwindCSS</span></div>
+                            <div class="flex items-center gap-2"><i class="fab fa-js-square text-yellow-400"></i><span
+                                    class="text-sm text-gray-600 dark:text-gray-400">JavaScript</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative w-full md:w-3/4" data-aos="fade-up">
+                    <div
+                        class="absolute top-[-5px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-pink-500 rounded-full border-4 border-white shadow-[0_0_12px_4px_rgba(236,72,153,0.7)] z-10">
+                    </div>
+                    <div
+                        class="hover-card bg-pink-50 dark:bg-gray-900 border-l-4 border-pink-500 p-6 mt-6 mr-auto rounded-xl max-w-[400px]">
+                        <img src="./images/brainly.png" class="rounded mb-3 w-full h-32 object-cover" />
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-pink-500 font-semibold text-lg">Brainly</h3>
+                            <div class="flex gap-2">
+                                <button class="bg-pink-300/30 dark:bg-gray-800 px-3 py-0 rounded-full"><a href="https://brainly-i4azouqvf-ankur-singhs-projects-06cef3a2.vercel.app/"
+                                        class="text-sm text-pink-500 hover:text-black hover:dark:text-white">🌐 Live
+                                        Demo</a></button>
+                                <button class="bg-pink-500/30 dark:bg-gray-950 px-3 py-0 rounded-full"><a href="https://github.com/tech-ankur/brainly"
+                                        class="text-sm text-pink-500 hover:text-black hover:dark:text-white hover:font-semibold "><i
+                                            class="fab fa-github"></i>&nbsp; Code</a></button>
+                            </div>
+                        </div>
+                        <p class="text-sm mb-2">brainly is a full-stack web application designed to store and manage video links in one centralized place. It allows users to save, organize, and access important video URLs easily, helping them keep track of learning resources or useful content without losing links.</p>
+                        <div class="flex items-center gap-3 mt-5">
+                            <div class="flex items-center gap-2">
+                                <i class="fab fa-js-square text-yellow-400"></i>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">JavaScript</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fab fa-css3-alt text-sky-400"></i>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">TailwindCSS</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-cloud text-blue-300"></i>
+                                <span class="text-sm text-gray-600 dark:text-gray-400">API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glowing Dot: End of Timeline -->
+                <div class="bg-blue-100/10 dark:bg-gray-950 w-full md:w-3/4 h-20 flex flex-col items-center justify-start"
+                    data-aos="fade-up">
+                    <div
+                        class="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-cyan-400 rounded-full border-4 border-white shadow-[0_0_12px_4px_rgba(34,211,238,0.7)] z-10">
+                    </div>
+                    <p class="text-xl mt-10 text-center">
+                        🚀 More projects coming soon...
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="bg-[#f9f9f9] dark:bg-gray-950 py-10 px-7 text-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-5xl font-bold text-center py-8 mb-8 text-blue-500" data-aos="fade-up">Skills</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+
+                    <!-- Languages -->
+                    <div class="bg-blue-200/20 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-2xl border-l-4 border-blue-600 transition hover:-translate-y-1 duration-300"
+                        data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-4">Languages</h3>
+                        <div class="space-y-3 text-gray-900 dark:text-gray-400 text-sm">
+                            <div class="flex items-center gap-2"><i class="fas fa-code text-red-500"></i><span>C /
+                                    C++</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-html5 text-orange-500"></i><span>HTML</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-css3-alt text-blue-500"></i><span>CSS</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-js text-yellow-400"></i><span>JavaScript</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-database text-green-500"></i><span>SQL</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-square-root-variable text-purple-500"></i><span>MATLAB</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="bg-orange-200/20 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-2xl border-l-4 border-orange-500 transition hover:-translate-y-1 duration-300"
+                        data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-orange-500 mb-4">Libraries & Frameworks</h3>
+                        <div class="space-y-3 text-gray-900 dark:text-gray-400 text-sm">
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-react text-cyan-400"></i><span>React.js</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-bootstrap text-pink-500"></i><span>Bootstrap</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-css3-alt text-sky-400"></i><span>Tailwind
+                                    CSS</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-forward text-gray-300"></i><span>Next.js</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Stack -->
+                    <div class="bg-pink-200/20 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-2xl border-l-4 border-pink-500 transition hover:-translate-y-1 duration-300"
+                        data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-pink-500 mb-4">Technologies / Stack</h3>
+                        <div class="space-y-3 text-gray-900 dark:text-gray-400 text-sm">
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-layer-group text-yellow-400"></i><span>MERN Stack</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-database text-green-400"></i><span>MongoDB</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-node-js text-orange-400"></i><span>Express.js</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-react text-cyan-400"></i><span>React.js</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fab fa-node text-indigo-400"></i><span>Node.js</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="bg-green-200/20 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-2xl border-l-4 border-green-500 transition hover:-translate-y-1 duration-300"
+                        data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-green-500 mb-4">Developer Tools</h3>
+                        <div class="space-y-3 text-gray-900 dark:text-gray-400 text-sm">
+                            <div class="flex items-center gap-2"><i class="fab fa-github text-white"></i><span>Git /
+                                    GitHub</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-terminal text-gray-400"></i><span>VS
+                                    Code</span></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-bug text-red-400"></i><span>Chrome
+                                    DevTools</span></div>
+                            <div class="flex items-center gap-2"><i
+                                    class="fas fa-check-circle text-green-300"></i><span>Postman</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect -->
+        <section id="contact" class="bg-[#f9f9f9] dark:bg-gray-950 py-20 px-7">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-12 text-blue-500">
+                    Let's Connect
+                </h2>
+
+                <div class="flex flex-col md:flex-row justify-between gap-12" data-aos="fade-up">
+                    <div class="md:w-1/2 space-y-6">
+                        <p class="text-lg">
+                            Whether you want to collaborate, ask a question, or just say hi — I'm happy to chat.
+                        </p>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                                <a href="mailto:13ankursingh2005@gmail.com"
+                                    class="hover:text-blue-400 transition">13ankursingh2005@gmail.com</a>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-phone text-green-400"></i>
+                                <span>+91 761778 8077</span>
+                            </div>
+
+                        </div>
+                        <br><br>
+                        <p class="sm:text-2xl font-semibold">Connect us on:</p>
+                        <div class="flex gap-6 pt-0 text-2xl">
+                            <a href="https://www.linkedin.com/in/ankur-singh-2005/"
+                                target="_blank" class="text-blue-500 hover:text-blue-300 transition">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ankur_singh2005?igsh=MTBwYTZ2dzFzazBhag=="
+                                target="_blank" class="text-pink-500 hover:text-pink-300 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/yourprofile" target="_blank"
+                                class="text-sky-400 hover:text-sky-200 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/tech-ankur" target="_blank"
+                                class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2">
+                        <form id="contactForm"
+                            class="space-y-5 backdrop-blur-md bg-white/60 dark:bg-white/10 border border-gray-300 dark:border-white/20 shadow-lg rounded-xl p-6 transition-all duration-300">
+
+                            <input type="text" name="name" placeholder="Your Name" required
+                                class="w-full border border-gray-400 dark:border-white/30 px-4 py-3 bg-white/70 dark:bg-white/10 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+                            <input type="email" name="email" placeholder="Your Email" required
+                                class="w-full border border-gray-400 dark:border-white/30 px-4 py-3 bg-white/70 dark:bg-white/10 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+                            <textarea rows="5" name="message" placeholder="Your Message" required
+                                class="w-full border border-gray-400 dark:border-white/30 px-4 py-3 bg-white/70 dark:bg-white/10 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+                            <button type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-800 transition px-6 py-3 rounded-lg text-white font-semibold shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-300 pt-10 pb-5 px-7 relative">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row flex-wrap justify-between gap-10">
+
+                <div class="w-full md:w-1/6">
+                    <h2 class="text-2xl font-bold text-white mb-3">Ankur Singh</h2>
+                    <p class="text-gray-400">Building beautiful, responsive web experiences.</p>
+                </div>
+
+                <div class="w-full md:w-1/6">
+                    <h3 class="text-xl font-semibold mb-3 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+                        <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+                        <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
+                        <li><a href="#certificates" class="hover:text-blue-400 transition">Certificates</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-2/6">
+                    <h3 class="text-xl font-semibold text-white mb-3">📍 Location</h3>
+                    <p class="text-gray-400 text-sm">Bhopal, India</p>
+                    <iframe class="w-full rounded-lg mt-2" height="120" style="border:0" loading="lazy" allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.738181844256!2d77.41261517473464!3d23.259933313258675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43f2f4cb3c15%3A0x19c088a25b48255c!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1717769999999!5m2!1sen!2sin">
+                    </iframe>
+
+                </div>
+
+                <div class="w-full md:w-1/6">
+                    <h3 class="text-xl font-semibold mb-3 text-white">Follow Me</h3>
+                    <div class="flex gap-5 text-2xl">
+                        <a href="https://www.linkedin.com/in/ankur-singh-13in"
+                            class="text-blue-500 hover:text-blue-300 transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/ankur_singh2005?igsh=MTBwYTZ2dzFzazBhag=="
+                            class="text-pink-500 hover:text-pink-300 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/yourprofile" class="text-sky-400 hover:text-sky-200 transition"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/tech-ankur" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-2xl mx-auto mt-12 text-center">
+                <h3 class="text-xl font-semibold text-white mb-4">📬 Subscribe to My Newsletter</h3>
+                <form class="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                    <input type="email" placeholder="Enter your email" required
+                        class="w-full sm:w-2/3 px-4 py-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit"
+                        class="bg-blue-600 px-6 py-3 rounded-lg text-white hover:bg-blue-800 transition">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-5 text-center text-sm text-gray-500">
+                © 2026 Ankur. All rights reserved.
+            </div>
+
+            <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+                class="fixed bottom-5 left-5 bg-blue-600 text-white h-10 w-10 rounded-full shadow-lg hover:bg-blue-800 transition z-50">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </footer>
+
+
+        <!-- Chatbot Container -->
+        <div id="chatbot-container"
+            class="fixed bottom-24 right-5 w-80 h-[65vh] bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl shadow-lg z-50 flex flex-col overflow-hidden hidden group">
+
+            <!-- Chat Messages Area -->
+            <div id="chatbox"
+                class="flex-1 px-2 py-3 my-3 space-y-2 overflow-y-auto text-sm text-gray-800 dark:text-gray-100">
+                <!-- Messages will go here -->
+            </div>
+
+            <!-- Input Field -->
+            <div class="border-t border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-3">
+                <input id="chat-input" type="text" placeholder="Ask me something..."
+                    class="w-full px-3 py-2 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none" />
+            </div>
+        </div>
+
+        <!-- Chat Toggle Button -->
+        <button id="chatbotBtn" onclick="toggleChat()"
+            class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-blue-600 text-white shadow-xl flex items-center justify-center hover:bg-blue-700 transition-transform transform hover:scale-110 z-50">
+            <i class="fas fa-robot text-2xl"></i>
+        </button>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
